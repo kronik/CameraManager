@@ -1,12 +1,13 @@
 import Foundation
 import CoreLocation
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
+class CameraLocationManager: NSObject, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     var latestLocation: CLLocation?
     
     override init() {
         super.init()
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
